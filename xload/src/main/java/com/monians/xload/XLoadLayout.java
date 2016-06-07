@@ -15,7 +15,6 @@ import android.widget.FrameLayout;
  */
 public class XLoadLayout extends FrameLayout {
 
-
     private int mLoadingId ,mEmptyId, mErrorId;
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
