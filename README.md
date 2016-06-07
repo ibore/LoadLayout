@@ -42,12 +42,12 @@ dependencies {
 ```
 ### 或着这样
 ```
-      View loadingView = inflater.inflate(R.layout.layout_loading, null);
-        xLoadLayout.setLoadingView(loadingView);
-        View emptyView = inflater.inflate(R.layout.layout_empty, null);
-        xLoadLayout.setEmptyView(emptyView);
-        View errorView = inflater.inflate(R.layout.layout_empty, null);
-        xLoadLayout.setErrorView(errorView);
+    View loadingView = inflater.inflate(R.layout.layout_loading, null);
+    xLoadLayout.setLoadingView(loadingView);
+    View emptyView = inflater.inflate(R.layout.layout_empty, null);
+    xLoadLayout.setEmptyView(emptyView);
+    View errorView = inflater.inflate(R.layout.layout_empty, null);
+    xLoadLayout.setErrorView(errorView);
 ```
 ###通过代码来切换各种状态的View
 
