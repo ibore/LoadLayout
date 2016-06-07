@@ -36,6 +36,10 @@ dependencies {
 ```
 ###(2) 在布局中添加各种状态的View 
 ```
+    // 一次全设置
+    xLoadLayout.setLoadView(R.layout.layout_loading, R.layout.layout_empty, R.layout.layout_error);
+
+    // 一个一个设置
     xLoadLayout.setLoadingView(R.layout.layout_loading);
     xLoadLayout.setEmptyView(R.layout.layout_empty);
     xLoadLayout.setErrorView(R.layout.layout_error);
@@ -43,11 +47,18 @@ dependencies {
 ### 或着这样
 ```
     View loadingView = inflater.inflate(R.layout.layout_loading, null);
-    xLoadLayout.setLoadingView(loadingView);
     View emptyView = inflater.inflate(R.layout.layout_empty, null);
-    xLoadLayout.setEmptyView(emptyView);
     View errorView = inflater.inflate(R.layout.layout_empty, null);
+
+    // 一次全设置
+    xLoadLayout.setLoadView(loadingView, emptyView, errorView);
+
+    // 一个一个设置
+    xLoadLayout.setLoadingView(loadingView);
+    xLoadLayout.setEmptyView(emptyView);
     xLoadLayout.setErrorView(errorView);
+
+
 ```
 ###通过代码来切换各种状态的View
 

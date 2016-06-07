@@ -32,7 +32,6 @@ public class XLoadLayout extends FrameLayout {
 
     public XLoadLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.XLoadLayout, defStyleAttr, 0);
         try {
             mLoadingId = typedArray.getResourceId(R.styleable.XLoadLayout_loadingLayout, -1);
@@ -65,6 +64,18 @@ public class XLoadLayout extends FrameLayout {
         if (mErrorId != -1) {
             setErrorView(mErrorId);
         }
+    }
+
+    public void setLoadView(int loadingViewResId, int emptyViewResId, int errorViewResId) {
+        setLoadingView(loadingViewResId);
+        setEmptyView(emptyViewResId);
+        setErrorView(errorViewResId);
+    }
+
+    public void setLoadView(View loadingView, View emptyView, View errorView) {
+        setLoadingView(loadingView);
+        setEmptyView(emptyView);
+        setErrorView(errorView);
     }
 
     public View setLoadingView(int loadingViewResId) {
