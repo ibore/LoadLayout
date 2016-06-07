@@ -2,22 +2,19 @@ package com.monians.xload;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.LayoutRes;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
 /**
- * 功能:
+ * 功能: XLoadLayout
  * 作者: ibore
  * 时间: 2016/5/27 11:33
  * 邮箱: bore521@live.com
  */
 public class XLoadLayout extends FrameLayout {
 
-    @LayoutRes
     private int mLoadingId ,mEmptyId, mErrorId;
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
@@ -84,25 +81,25 @@ public class XLoadLayout extends FrameLayout {
         hideAllView();
     }
 
-    public View setLoadingView(@LayoutRes int loadingViewResId) {
+    public View setLoadingView(int loadingViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(loadingViewResId, this, false);
         setLoadingView(view);
         return view;
     }
 
-    public View setEmptyView(@LayoutRes int emptyViewResId) {
+    public View setEmptyView(int emptyViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(emptyViewResId, this, false);
         setEmptyView(view);
         return view;
     }
 
-    public View setErrorView(@LayoutRes int errorViewResId) {
+    public View setErrorView(int errorViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(errorViewResId, this, false);
         setErrorView(view);
         return view;
     }
 
-    public View setContentView(@LayoutRes int contentViewResId) {
+    public View setContentView(int contentViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(contentViewResId, this, false);
         setContentView(view);
         return view;

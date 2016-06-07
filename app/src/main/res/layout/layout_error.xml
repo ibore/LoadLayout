@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="加载失败"
+        android:text="加载失败,点击屏幕重新加载"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

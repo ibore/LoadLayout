@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.monians.xload.XLoadLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoadClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onEmptyClick() {
+
+    }
+
+    @Override
+    public void onErrorClick() {
+
     }
 }
