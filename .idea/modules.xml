@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/XLoadLayout.iml" filepath="$PROJECT_DIR$/XLoadLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/xload/xlibrary.iml" filepath="$PROJECT_DIR$/xload/xlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xload/xload.iml" filepath="$PROJECT_DIR$/xload/xload.iml" />
     </modules>
   </component>
 </project>

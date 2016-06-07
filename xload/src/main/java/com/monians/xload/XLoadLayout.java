@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
  */
 public class XLoadLayout extends FrameLayout {
 
+
     private int mLoadingId ,mEmptyId, mErrorId;
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
@@ -64,21 +65,6 @@ public class XLoadLayout extends FrameLayout {
         if (mErrorId != -1) {
             setErrorView(mErrorId);
         }
-
-        mEmptyView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != onLoadClickListener)onLoadClickListener.onEmptyClick();
-            }
-        });
-
-        mErrorView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != onLoadClickListener)onLoadClickListener.onErrorClick();
-            }
-        });
-        hideAllView();
     }
 
     public View setLoadingView(int loadingViewResId) {
@@ -126,6 +112,12 @@ public class XLoadLayout extends FrameLayout {
             addView(this.mEmptyView);
             mEmptyView.setVisibility(GONE);
         }
+        mEmptyView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != onLoadClickListener)onLoadClickListener.onEmptyClick();
+            }
+        });
         return mEmptyView;
     }
 
@@ -138,6 +130,12 @@ public class XLoadLayout extends FrameLayout {
             addView(errorView);
             mErrorView.setVisibility(GONE);
         }
+        mErrorView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != onLoadClickListener)onLoadClickListener.onErrorClick();
+            }
+        });
         return mErrorView;
     }
 
@@ -168,11 +166,6 @@ public class XLoadLayout extends FrameLayout {
         showView(mContentView);
     }
 
-    private void hideAllView() {
-        for (int i = 0; i < getChildCount(); i++) {
-            getChildAt(i).setVisibility(GONE);
-        }
-    }
     private void showView(View specialView) {
         if (specialView == null) {
             throw new NullPointerException("The View can't be empty");
@@ -193,5 +186,4 @@ public class XLoadLayout extends FrameLayout {
         // 数据错误时的回调
         void onErrorClick();
     }
-
 }
