@@ -14,7 +14,7 @@ XLoadLayout集成自Framelayout，默认把第一个子view当做内容视图，
 ## Gradle中使用
 ```
 dependencies {
-    compile 'com.monians:xload:1.0.0'
+    compile 'com.monians:xload:1.1.0'
 }
 ```
 ##使用方法：
@@ -57,8 +57,7 @@ dependencies {
     xLoadLayout.setLoadingView(loadingView);
     xLoadLayout.setEmptyView(emptyView);
     xLoadLayout.setErrorView(errorView);
-
-
+    
 ```
 ###通过代码来切换各种状态的View
 
