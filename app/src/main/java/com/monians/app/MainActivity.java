@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
 
 import com.monians.xload.XLoadLayout;
 
@@ -23,14 +22,18 @@ public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoa
 //        xLoadLayout.setLoadingView(R.layout.layout_loading);
 //        xLoadLayout.setEmptyView(R.layout.layout_empty);
 //        xLoadLayout.setErrorView(R.layout.layout_error);
-
+//
+//        xLoadLayout.setLoadView(R.layout.layout_loading, R.layout.layout_empty, R.layout.layout_error);
+//
 //        View loadingView = inflater.inflate(R.layout.layout_loading, null);
-//        xLoadLayout.setLoadingView(loadingView);
 //        View emptyView = inflater.inflate(R.layout.layout_empty, null);
+//        View errorView = inflater.inflate(R.layout.layout_error, null);
+//
+//        xLoadLayout.setLoadingView(loadingView);
 //        xLoadLayout.setEmptyView(emptyView);
-//        View errorView = inflater.inflate(R.layout.layout_empty, null);
 //        xLoadLayout.setErrorView(errorView);
-
+//
+//        xLoadLayout.setLoadView(loadingView, emptyView, errorView);
 
         findViewById(R.id.loading).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,17 +60,17 @@ public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoa
             }
         });
 
-        xLoadLayout.setOnLoadingClickListener(new XLoadLayout.OnLoadClickListener() {
-            @Override
-            public void onEmptyClick() {
-                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onErrorClick() {
-                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        xLoadLayout.setOnLoadingClickListener(new XLoadLayout.OnLoadClickListener() {
+//            @Override
+//            public void onEmptyClick() {
+//                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onErrorClick() {
+//                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
 

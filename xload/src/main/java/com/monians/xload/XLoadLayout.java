@@ -2,6 +2,7 @@ package com.monians.xload;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.LayoutRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.FrameLayout;
  */
 public class XLoadLayout extends FrameLayout {
 
-    private int mLoadingId ,mEmptyId, mErrorId;
+    private @LayoutRes int mLoadingId ,mEmptyId, mErrorId;
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
 
@@ -65,7 +66,7 @@ public class XLoadLayout extends FrameLayout {
         }
     }
 
-    public void setLoadView(int loadingViewResId, int emptyViewResId, int errorViewResId) {
+    public void setLoadView(@LayoutRes int loadingViewResId, @LayoutRes int emptyViewResId, @LayoutRes int errorViewResId) {
         setLoadingView(loadingViewResId);
         setEmptyView(emptyViewResId);
         setErrorView(errorViewResId);
@@ -77,25 +78,25 @@ public class XLoadLayout extends FrameLayout {
         setErrorView(errorView);
     }
 
-    public View setLoadingView(int loadingViewResId) {
+    public View setLoadingView(@LayoutRes int loadingViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(loadingViewResId, this, false);
         setLoadingView(view);
         return view;
     }
 
-    public View setEmptyView(int emptyViewResId) {
+    public View setEmptyView(@LayoutRes int emptyViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(emptyViewResId, this, false);
         setEmptyView(view);
         return view;
     }
 
-    public View setErrorView(int errorViewResId) {
+    public View setErrorView(@LayoutRes int errorViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(errorViewResId, this, false);
         setErrorView(view);
         return view;
     }
 
-    public View setContentView(int contentViewResId) {
+    public View setContentView(@LayoutRes int contentViewResId) {
         View view = LayoutInflater.from(getContext()).inflate(contentViewResId, this, false);
         setContentView(view);
         return view;

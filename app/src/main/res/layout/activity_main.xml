@@ -9,10 +9,10 @@
     tools:context="com.monians.app.MainActivity">
 
     <com.monians.xload.XLoadLayout
+        android:id="@+id/xloadlayout"
         app:loadingLayout="@layout/layout_loading"
         app:emptyLayout="@layout/layout_empty"
         app:errorLayout="@layout/layout_error"
-        android:id="@+id/xloadlayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
