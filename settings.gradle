@@ -1,1 +1,1 @@
-include ':app', ':xload'
+include ':app', ':load'

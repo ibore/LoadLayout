@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.monians.xload">
+    package="com.monians.load">
 
     <application
         android:allowBackup="true"

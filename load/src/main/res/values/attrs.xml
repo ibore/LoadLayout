@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="XLoadLayout">
+    <declare-styleable name="LoadLayout">
         <attr name="loadingLayout" format="reference" />
         <attr name="emptyLayout" format="reference" />
         <attr name="errorLayout" format="reference" />

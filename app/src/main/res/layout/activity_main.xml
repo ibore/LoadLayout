@@ -8,8 +8,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.monians.app.MainActivity">
 
-    <com.monians.xload.XLoadLayout
-        android:id="@+id/xloadlayout"
+    <com.monians.load.LoadLayout
+        android:id="@+id/loadlayout"
         app:loadingLayout="@layout/layout_loading"
         app:emptyLayout="@layout/layout_empty"
         app:errorLayout="@layout/layout_error"
@@ -21,7 +21,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.monians.xload.XLoadLayout>
+    </com.monians.load.LoadLayout>
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"

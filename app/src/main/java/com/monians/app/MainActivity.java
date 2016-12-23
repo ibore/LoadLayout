@@ -1,13 +1,15 @@
 package com.monians.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
-import com.monians.xload.XLoadLayout;
+import com.monians.load.LoadLayout;
 
-public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoadClickListener{
+
+public class MainActivity extends AppCompatActivity implements LoadLayout.OnLoadClickListener{
 
     private LayoutInflater inflater;
     @Override
@@ -17,23 +19,7 @@ public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoa
 
         inflater = LayoutInflater.from(this);
 
-        final XLoadLayout xLoadLayout = (XLoadLayout) findViewById(R.id.xloadlayout);
-        // 通过代码添加
-//        xLoadLayout.setLoadingView(R.layout.layout_loading);
-//        xLoadLayout.setEmptyView(R.layout.layout_empty);
-//        xLoadLayout.setErrorView(R.layout.layout_error);
-//
-//        xLoadLayout.setLoadView(R.layout.layout_loading, R.layout.layout_empty, R.layout.layout_error);
-//
-//        View loadingView = inflater.inflate(R.layout.layout_loading, null);
-//        View emptyView = inflater.inflate(R.layout.layout_empty, null);
-//        View errorView = inflater.inflate(R.layout.layout_error, null);
-//
-//        xLoadLayout.setLoadingView(loadingView);
-//        xLoadLayout.setEmptyView(emptyView);
-//        xLoadLayout.setErrorView(errorView);
-//
-//        xLoadLayout.setLoadView(loadingView, emptyView, errorView);
+        final LoadLayout xLoadLayout = (LoadLayout) findViewById(R.id.loadlayout);
 
         findViewById(R.id.loading).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,29 +46,16 @@ public class MainActivity extends AppCompatActivity implements XLoadLayout.OnLoa
             }
         });
 
-//        xLoadLayout.setOnLoadingClickListener(new XLoadLayout.OnLoadClickListener() {
-//            @Override
-//            public void onEmptyClick() {
-//                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onErrorClick() {
-//                Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-
+        xLoadLayout.setOnLoadingClickListener(this);
     }
 
     @Override
     public void onEmptyClick() {
-
+        Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onErrorClick() {
-
+        Toast.makeText(getApplicationContext(), "点击重试", Toast.LENGTH_SHORT).show();
     }
 }

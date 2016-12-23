@@ -1,4 +1,4 @@
-package com.monians.xload;
+package com.monians.load;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,62 +14,57 @@ import android.widget.FrameLayout;
  * 时间: 2016/5/27 11:33
  * 邮箱: bore521@live.com
  */
-public class XLoadLayout extends FrameLayout {
+public class LoadLayout extends FrameLayout {
 
     private @LayoutRes int mLoadingId ,mEmptyId, mErrorId;
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
 
     private OnLoadClickListener onLoadClickListener;
+    public void setOnLoadingClickListener(OnLoadClickListener onLoadClickListener) {
+        this.onLoadClickListener = onLoadClickListener;
+    }
 
-    public XLoadLayout(Context context) {
+    public LoadLayout(Context context) {
         this(context, null);
     }
 
-    public XLoadLayout(Context context, AttributeSet attrs) {
+    public LoadLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public XLoadLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoadLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.XLoadLayout, defStyleAttr, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.LoadLayout, defStyleAttr, 0);
         try {
-            mLoadingId = typedArray.getResourceId(R.styleable.XLoadLayout_loadingLayout, -1);
-            mEmptyId = typedArray.getResourceId(R.styleable.XLoadLayout_emptyLayout, -1);
-            mErrorId = typedArray.getResourceId(R.styleable.XLoadLayout_errorLayout, -1);
+            mLoadingId = typedArray.getResourceId(R.styleable.LoadLayout_loadingLayout, -1);
+            mEmptyId = typedArray.getResourceId(R.styleable.LoadLayout_emptyLayout, -1);
+            mErrorId = typedArray.getResourceId(R.styleable.LoadLayout_errorLayout, -1);
         } finally {
             typedArray.recycle();
         }
     }
 
-    // 设置监听
-    public void setOnLoadingClickListener(OnLoadClickListener onLoadClickListener) {
-        this.onLoadClickListener = onLoadClickListener;
-    }
-
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-
         mContentView = getChildAt(0);
-
-        if (mLoadingId != -1) {
-            setLoadingView(mLoadingId);
-        }
-
-        if (mEmptyId != -1) {
-            setEmptyView(mEmptyId);
-        }
-
-        if (mErrorId != -1) {
-            setErrorView(mErrorId);
-        }
+        if (mLoadingId != -1) setLoadingView(mLoadingId);
+        if (mEmptyId != -1) setEmptyView(mEmptyId);
+        if (mErrorId != -1) setErrorView(mErrorId);
     }
 
     public void setLoadView(@LayoutRes int loadingViewResId, @LayoutRes int emptyViewResId, @LayoutRes int errorViewResId) {
         setLoadingView(loadingViewResId);
         setEmptyView(emptyViewResId);
         setErrorView(errorViewResId);
+    }
+
+    public void setLoadView(@LayoutRes int loadingViewResId, @LayoutRes int emptyViewResId, @LayoutRes int errorViewResId, @LayoutRes int contentViewResId) {
+        setLoadingView(loadingViewResId);
+        setEmptyView(emptyViewResId);
+        setErrorView(errorViewResId);
+        setContentView(contentViewResId);
     }
 
     public void setLoadView(View loadingView, View emptyView, View errorView) {
