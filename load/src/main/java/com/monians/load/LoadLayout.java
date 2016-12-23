@@ -20,6 +20,22 @@ public class LoadLayout extends FrameLayout {
 
     private View mLoadingView, mEmptyView, mErrorView, mContentView;
 
+    public View getLoadingView() {
+        return mLoadingView;
+    }
+
+    public View getEmptyView() {
+        return mEmptyView;
+    }
+
+    public View getErrorView() {
+        return mErrorView;
+    }
+
+    public View getContentView() {
+        return mContentView;
+    }
+
     private OnLoadClickListener onLoadClickListener;
     public void setOnLoadingClickListener(OnLoadClickListener onLoadClickListener) {
         this.onLoadClickListener = onLoadClickListener;
